@@ -1,0 +1,76 @@
+body {
+margin: 0px;
+padding: 0px;
+}
+
+h1 {
+    font-family: 'Amatic SC';
+    font-size: 70px;
+    margin-left: 30px;
+}
+
+h2 {
+    font-family: 'Amatic SC';
+    font-size: 50px;
+    margin-left: 30px;
+}
+
+#line1 {
+margin-top: -10px;
+border-top: 2px solid #8c8b8b;
+}
+
+#line2 {
+border-top: 1px dashed #8c8b8b;
+}
+
+
+#content {
+padding: 40px 50px 40px 50px;
+margin-left: auto;
+margin-right: auto;
+}
+
+p {
+font-family: 'Arial';
+font-size: 20px;
+margin-top: -5px;
+}
+
+#text {
+width: 750px;
+padding-top: 30px;
+padding-bottom: 10 px;
+}
+
+#apitext {
+width: 500px;
+height: 400px;
+margin-top: 200px;
+margin-left: 800px;
+float: left;
+}
+
+#wireframe1 {
+width: 300px;
+height: 200px;
+margin-top: -40px;
+margin-left: 10px;
+float: left;
+}
+
+#wireframe2 {
+width: 480px;
+height: 350px;
+margin-top: 380px;
+margin-left: 145px;
+
+}
+
+#wireframe3 {
+width: 480px;
+height: 350px;
+margin-top: 500px;
+margin-left: 145px;
+
+}
