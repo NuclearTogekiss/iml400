@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+    <script src="d3.min.js"></script>
+    <script src="jquery-1.12.3.min.js"></script>
+</head>
+<body>
+
+    <script>
+        var debug = undefined;
+        var canvas = d3.select("body")
+            .append("svg")
+            .attr("width", 1920)
+            .attr("height", 1080);
+
+        /*Core Variables*/
+
+        var parentcolor = d3.rgb(152, 216, 237);
+        var childcolor = d3.rgb(123, 143, 227);
+        var grandchildcolor = d3.rgb(56, 85, 201);
+        var selecter = d3.rgb(131,222,152);
+
+        var child1word = "Readings";
+        var child2word = "Assignments";
+        var child3word = "Portfolio";
+        var child4word = "Presentation";
+
+        /*Main circle*/
+
+        var parent = canvas.append("circle")
+            .attr("id", "parent")
+            .attr("cx", 960)
+            .attr("cy", 450)
+            .attr("r", 100)
+            .attr("fill", parentcolor);
+
+
+
+        /*Secondary Circles*/
+
+        var child1 = canvas.append("a")
+            .attr("xlink:href", "readings.html")
+            .html("Assignments")
+            .append("circle")
+            .attr("id", "child1")
+            .attr("cx", 810)
+            .attr("cy", 450)
+            .attr("r", 0)
+            .attr("fill", childcolor);
+
+        var child2 = canvas.append("a")
+            .attr("xlink:href", "http://mpkoz.github.io/IML400/impress/index.html#/bored")
+            .append("circle")
+            .attr("id", "child2")
+            .attr("cx", 960)
+            .attr("cy", 600)
+            .attr("r", 0)
+            .attr("fill", childcolor);
+
+        var child3 = canvas.append("a")
+            .attr("xlink:href", "http://watsonthomasportfolio.weebly.com/")
+            .append("circle")
+            .attr("id", "child3")
+            .attr("cx", 1110)
+            .attr("cy", 450)
+            .attr("r", 0)
+            .attr("fill", childcolor);
+
+        var child4 = canvas.append("circle")
+           .attr("id", "child4")
+           .attr("cx", 960)
+           .attr("cy", 300)
+           .attr("r", 0)
+           .attr("fill", childcolor);
+
+
+
+        /*Tirshiary Circles*/
+
+       /* var grandchild1 = canvas.append("circle")
+            .attr("id", "gchild1")
+            .attr("cx", 735)
+            .attr("cy", 450)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
+        var grandchild2 = canvas.append("circle")
+            .attr("id", "gchild2")
+            .attr("cx", 810)
+            .attr("cy", 525)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
+        var grandchild3 = canvas.append("circle")
+            .attr("id", "gchild3")
+            .attr("cx", 810)
+            .attr("cy", 375)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
+            */
+
+        var grandchild4 = canvas.append("a")
+            .attr("xlink:href", "who_dat.html")
+            .html("who_dat")
+            .append("circle")
+            .attr("id", "gchild4")
+            .attr("cx", 885)
+            .attr("cy", 300)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
+        var grandchild5 = canvas.append("a")
+            .attr("xlink:href", "api.html")
+            .html("api")
+            .append("circle")
+            .attr("id", "gchild5")
+            .attr("cx", 960)
+            .attr("cy", 225)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
+        var grandchild6 = canvas.append("a")
+            .attr("xlink:href", "ux.html")
+            .html("ux")
+            .append("circle")
+            .attr("id", "gchild6")
+            .attr("cx", 1035)
+            .attr("cy", 300)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
+
+
+        var grandchild7 = canvas.append("a")
+            .attr("xlink:href", "http://watsonthomasportfolio.weebly.com/resume.html")
+            .append("circle")
+            .attr("id", "gchild7")
+            .attr("cx", 1110)
+            .attr("cy", 375)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
+        var grandchild8 = canvas.append("a")
+            .attr("xlink:href", "http://watsonthomasportfolio.weebly.com/video-game-ideas.html")
+            .append("circle")
+            .attr("id", "gchild8")
+            .attr("cx", 1185)
+            .attr("cy", 450)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
+        var grandchild9 = canvas.append("a")
+            .attr("xlink:href", "http://watsonthomasportfolio.weebly.com/contact.html")
+            .append("circle")
+            .attr("id", "gchild9")
+            .attr("cx", 1110)
+            .attr("cy", 525)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
+        /*Text*/
+
+        var parenttext = canvas.append("text")
+            .attr("id", "text0")
+        .attr("x", 915)
+        .attr("y", 455)
+        .style("alignment", "center")
+        .text("Start Here")
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "20px");
+
+        var chlid1text = canvas.append("text")
+        .attr("id", "text1")
+        .attr("x", 780)
+        .attr("y", 455)
+        .style("alignment", "center")
+        .text(child1word)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "14px")
+        .attr("fill", "black")
+        .style("opacity", 0);
+
+        var chlid2text = canvas.append("text")
+        .attr("id", "text2")
+        .attr("x", 920)
+        .attr("y", 305)
+        .style("alignment", "center")
+        .text(child2word)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "14px")
+        .attr("fill", "black")
+        .style("opacity", 0);
+
+        var chlid3text = canvas.append("text")
+       .attr("id", "text3")
+       .attr("x", 1085)
+       .attr("y", 455)
+       .style("alignment", "center")
+       .text(child3word)
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "14px")
+       .attr("fill", "black")
+       .style("opacity", 0);
+
+        var chlid4text = canvas.append("text")
+       .attr("id", "text4")
+       .attr("x", 920)
+       .attr("y", 605)
+       .style("alignment", "center")
+       .text(child4word)
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "14px")
+       .attr("fill", "black")
+       .style("opacity", 0);
+
+        var grandchild1text = canvas.append("text")
+        .attr("id", "gtext1")
+        .attr("x", 870)
+        .attr("y", 300)
+        .style("alignment", "center")
+       .text("WD")
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "12px")
+       .attr("fill", "black")
+       .style("opacity", 0);
+
+        var grandchild2text = canvas.append("text")
+        .attr("id", "gtext2")
+        .attr("x", 950)
+        .attr("y", 225)
+        .style("alignment", "center")
+       .text("api")
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "12px")
+       .attr("fill", "black")
+       .style("opacity", 0);
+
+        var grandchild3text = canvas.append("text")
+        .attr("id", "gtext2")
+        .attr("x", 1025)
+        .attr("y", 300)
+        .style("alignment", "center")
+       .text("UX")
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "12px")
+       .attr("fill", "black")
+       .style("opacity", 0);
+
+        var grandchild4text = canvas.append("text")
+        .attr("id", "gtext4")
+        .attr("x", 1105)
+        .attr("y", 375)
+        .style("alignment", "center")
+       .text("R")
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "12px")
+       .attr("fill", "black")
+       .style("opacity", 0);
+
+        var grandchild5text = canvas.append("text")
+        .attr("id", "gtext5")
+        .attr("x", 1180)
+        .attr("y", 450)
+        .style("alignment", "center")
+       .text("V")
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "12px")
+       .attr("fill", "black")
+       .style("opacity", 0);
+
+        var grandchild6text = canvas.append("text")
+        .attr("id", "gtext6")
+        .attr("x", 1105)
+        .attr("y", 525)
+        .style("alignment", "center")
+       .text("C")
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "12px")
+       .attr("fill", "black")
+       .style("opacity", 0);
+
+        var text0group = d3.selectAll("#text0");
+        var text1group = d3.selectAll("#text1");
+        var text2group = d3.selectAll("#text2");
+        var text3group = d3.selectAll("#text3");
+        var text4group = d3.selectAll("#text4");
+        var text5group = d3.selectAll("#gtext1");
+        var text6group = d3.selectAll("#gtext2");
+        var text7group = d3.selectAll("#gtext3");
+        var text8group = d3.selectAll("#gtext4");
+        var text9group = d3.selectAll("#gtext5");
+        var text10group = d3.selectAll("#gtext6");
+
+        $(document).ready(function () {
+            /*Animations*/
+
+            /* Text Triggers */
+
+            $("#text0").mouseover(function () {
+
+                child1.transition()
+                .attr("r", 50);
+                text1group.transition().style("opacity", 1).delay(50);
+                child2.transition()
+                .attr("r", 50);
+                text2group.transition().style("opacity", 1).delay(50);
+                child3.transition()
+                .attr("r", 50);
+                text3group.transition().style("opacity", 1).delay(50);
+                child4.transition()
+                .attr("r", 50);
+                text4group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#text1").mouseover(function () {
+
+                child1.transition()
+                .attr("r", 50);
+                text1group.transition().style("opacity", 1).delay(50);
+                child2.transition()
+                .attr("r", 50);
+                text2group.transition().style("opacity", 1).delay(50);
+                child3.transition()
+                .attr("r", 50);
+                text3group.transition().style("opacity", 1).delay(50);
+                child4.transition()
+                .attr("r", 50);
+                text4group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#text2").mouseover(function () {
+
+                child1.transition()
+                .attr("r", 50);
+                text1group.transition().style("opacity", 1).delay(50);
+                child2.transition()
+                .attr("r", 50);
+                text2group.transition().style("opacity", 1).delay(50);
+                child3.transition()
+                .attr("r", 50);
+                text3group.transition().style("opacity", 1).delay(50);
+                child4.transition()
+                .attr("r", 50);
+                text4group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#text3").mouseover(function () {
+
+                child1.transition()
+                .attr("r", 50);
+                text1group.transition().style("opacity", 1).delay(50);
+                child2.transition()
+                .attr("r", 50);
+                text2group.transition().style("opacity", 1).delay(50);
+                child3.transition()
+                .attr("r", 50);
+                text3group.transition().style("opacity", 1).delay(50);
+                child4.transition()
+                .attr("r", 50);
+                text4group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#text4").mouseover(function () {
+
+                child1.transition()
+                .attr("r", 50);
+                text1group.transition().style("opacity", 1).delay(50);
+                child2.transition()
+                .attr("r", 50);
+                text2group.transition().style("opacity", 1).delay(50);
+                child3.transition()
+                .attr("r", 50);
+                text3group.transition().style("opacity", 1).delay(50);
+                child4.transition()
+                .attr("r", 50);
+                text4group.transition().style("opacity", 1).delay(50);
+            });
+
+            /*core circles*/
+            $("circle").mouseover(function () {
+               
+                child1.transition()
+                .attr("r", 50);
+                text1group.transition().style("opacity",1).delay(50);
+                child2.transition()
+                .attr("r", 50);
+                text2group.transition().style("opacity", 1).delay(50);
+                child3.transition()
+                .attr("r", 50);
+                text3group.transition().style("opacity", 1).delay(50);
+                child4.transition()
+                .attr("r", 50);
+                text4group.transition().style("opacity", 1).delay(50);
+
+            });
+            $("circle").mouseleave (function(){
+
+                child1.transition()
+                    .delay(400)
+                 .attr("r", 0);
+                text1group.transition().style("opacity", 0).delay(350);
+                child2.transition()
+                    .delay(400)
+                 .attr("r", 0);
+                text2group.transition().style("opacity", 0).delay(350);
+                child3.transition()
+                    .delay(400)
+                 .attr("r", 0);
+                text3group.transition().style("opacity", 0).delay(350);
+                child4.transition()
+                    .delay(400)
+                 .attr("r", 0);
+                text4group.transition().style("opacity", 0).delay(350);
+            });
+
+
+
+            /*Left side*/
+
+           /* $("#child1").mouseover(function () {
+                grandchild1.transition()
+                .attr("r", 25);
+                grandchild2.transition()
+                .attr("r", 25);
+                grandchild3.transition()
+                .attr("r", 25);
+
+            });
+
+            $("#child1").mouseleave(function () {
+                grandchild1.transition()
+                    .delay(200)
+                .attr("r", 0);
+                grandchild2.transition()
+                    .delay(200)
+                .attr("r", 0);
+                grandchild3.transition()
+                    .delay(200)
+                .attr("r", 0);
+            });
+
+           
+
+            $("#gchild1").mouseover(function () {
+                grandchild1.transition()
+                .attr("r", 25);
+                grandchild2.transition()
+                .attr("r", 25);
+                grandchild3.transition()
+                .attr("r", 25);
+            });
+
+            $("#gchild1").mouseleave(function () {
+                grandchild1.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild2.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild3.transition()
+                    .delay(400)
+                .attr("r", 0);
+            });
+
+            $("#gchild2").mouseover(function () {
+                grandchild1.transition()
+                .attr("r", 25);
+                grandchild2.transition()
+                .attr("r", 25);
+                grandchild3.transition()
+                .attr("r", 25);
+            });
+
+            $("#gchild2").mouseleave(function () {
+                grandchild1.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild2.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild3.transition()
+                    .delay(400)
+                .attr("r", 0);
+            });
+
+            $("#gchild3").mouseover(function () {
+                grandchild1.transition()
+                .attr("r", 25);
+                grandchild2.transition()
+                .attr("r", 25);
+                grandchild3.transition()
+                .attr("r", 25);
+            });
+
+            $("#gchild3").mouseleave(function () {
+                grandchild1.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild2.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild3.transition()
+                    .delay(400)
+                .attr("r", 0);
+            });
+            
+             */
+
+
+            /*Top side*/
+
+            $("#child4").mouseover(function () {
+                grandchild4.transition()
+                .attr("r", 25)
+                text5group.transition().style("opacity", 1).delay(50);
+                grandchild5.transition()
+                .attr("r", 25);
+                text6group.transition().style("opacity", 1).delay(50)
+                grandchild6.transition()
+                .attr("r", 25);
+                text7group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#child4").mouseleave(function () {
+                grandchild4.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text5group.transition().style("opacity", 0).delay(350);
+                grandchild5.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text6group.transition().style("opacity", 0).delay(350);
+                grandchild6.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text7group.transition().style("opacity", 0).delay(350);
+            });
+            
+            $("#gchild4").mouseover(function () {
+                grandchild4.transition()
+                .attr("r", 25);
+                grandchild5.transition()
+                .attr("r", 25);
+                grandchild6.transition()
+                .attr("r", 25);
+                text5group.transition().style("opacity", 1).delay(50);
+                text6group.transition().style("opacity", 1).delay(50);
+                text7group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#gchild4").mouseleave(function () {
+                grandchild4.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild5.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild6.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text5group.transition().style("opacity", 0).delay(350);
+                text6group.transition().style("opacity", 0).delay(350);
+                text7group.transition().style("opacity", 0).delay(350);
+            });
+            
+            $("#gchild5").mouseover(function () {
+                grandchild4.transition()
+                .attr("r", 25);
+                grandchild5.transition()
+                .attr("r", 25);
+                grandchild6.transition()
+                .attr("r", 25);
+                text5group.transition().style("opacity", 1).delay(50);
+                text6group.transition().style("opacity", 1).delay(50);
+                text7group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#gchild5").mouseleave(function () {
+                grandchild4.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild5.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild6.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text5group.transition().style("opacity", 0).delay(350);
+                text6group.transition().style("opacity", 0).delay(350);
+                text7group.transition().style("opacity", 0).delay(350);
+            });
+
+            $("#gchild6").mouseover(function () {
+                grandchild4.transition()
+                .attr("r", 25);
+                grandchild5.transition()
+                .attr("r", 25);
+                grandchild6.transition()
+                .attr("r", 25);
+                text5group.transition().style("opacity", 1).delay(50);
+                text6group.transition().style("opacity", 1).delay(50);
+                text7group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#gchild6").mouseleave(function () {
+                grandchild4.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild5.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild6.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text5group.transition().style("opacity", 0).delay(350);
+                text6group.transition().style("opacity", 0).delay(350);
+                text7group.transition().style("opacity", 0).delay(350);
+            });
+
+
+
+
+            /*Right side*/
+
+            $("#child3").mouseover(function () {
+                grandchild7.transition()
+                .attr("r", 25);
+                grandchild8.transition()
+                .attr("r", 25);
+                grandchild9.transition()
+                .attr("r", 25);
+                text8group.transition().style("opacity", 1).delay(50);
+                text9group.transition().style("opacity", 1).delay(50);
+                text10group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#child3").mouseleave(function () {
+                grandchild7.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild8.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild9.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text8group.transition().style("opacity", 0).delay(350);
+                text9group.transition().style("opacity", 0).delay(350);
+                text10group.transition().style("opacity", 0).delay(350);
+            });
+
+            $("#gchild7").mouseover(function () {
+                grandchild7.transition()
+                .attr("r", 25);
+                grandchild8.transition()
+                .attr("r", 25);
+                grandchild9.transition()
+                .attr("r", 25);
+                text8group.transition().style("opacity", 1).delay(50);
+                text9group.transition().style("opacity", 1).delay(50);
+                text10group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#gchild7").mouseleave(function () {
+                grandchild7.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild8.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild9.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text8group.transition().style("opacity", 0).delay(350);
+                text9group.transition().style("opacity", 0).delay(350);
+                text10group.transition().style("opacity", 0).delay(350);
+            });
+
+            $("#gchild8").mouseover(function () {
+                grandchild7.transition()
+                .attr("r", 25);
+                grandchild8.transition()
+                .attr("r", 25);
+                grandchild9.transition()
+                .attr("r", 25);
+                text8group.transition().style("opacity", 1).delay(50);
+                text9group.transition().style("opacity", 1).delay(50);
+                text10group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#gchild8").mouseleave(function () {
+                grandchild7.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild8.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild9.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text8group.transition().style("opacity", 0).delay(350);
+                text9group.transition().style("opacity", 0).delay(350);
+                text10group.transition().style("opacity", 0).delay(350);
+            });
+
+            $("#gchild9").mouseover(function () {
+                grandchild7.transition()
+                .attr("r", 25);
+                grandchild8.transition()
+                .attr("r", 25);
+                grandchild9.transition()
+                .attr("r", 25);
+                text8group.transition().style("opacity", 1).delay(50);
+                text9group.transition().style("opacity", 1).delay(50);
+                text10group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#gchild9").mouseleave(function () {
+                grandchild7.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild8.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild9.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text8group.transition().style("opacity", 0).delay(350);
+                text9group.transition().style("opacity", 0).delay(350);
+                text10group.transition().style("opacity", 0).delay(350);
+            });
+    });
+
+    </script>
+   
+
+</body>
+</html>
