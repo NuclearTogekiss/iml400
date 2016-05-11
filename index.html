@@ -161,6 +161,17 @@
             .attr("r", 0)
             .attr("fill", grandchildcolor);
 
+
+        var grandchild10 = canvas.append("a")
+            .attr("xlink:href", "final_documentation.html")
+            .html("final_documentation")
+            .append("circle")
+            .attr("id", "gchild10")
+            .attr("cx", 960)
+            .attr("cy", 175)
+            .attr("r", 0)
+            .attr("fill", grandchildcolor);
+
         /*Text*/
 
         var parenttext = canvas.append("text")
@@ -218,7 +229,7 @@
 
         var grandchild1text = canvas.append("text")
         .attr("id", "gtext1")
-        .attr("x", 870)
+        .attr("x", 875)
         .attr("y", 300)
         .style("alignment", "center")
        .text("WD")
@@ -282,6 +293,17 @@
        .attr("fill", "black")
        .style("opacity", 0);
 
+        var grandchild7text = canvas.append("text")
+        .attr("id", "gtext7")
+        .attr("x", 950)
+        .attr("y", 175)
+        .style("alignment", "center")
+       .text("FD")
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "12px")
+       .attr("fill", "black")
+       .style("opacity", 0);
+
         var text0group = d3.selectAll("#text0");
         var text1group = d3.selectAll("#text1");
         var text2group = d3.selectAll("#text2");
@@ -293,6 +315,7 @@
         var text8group = d3.selectAll("#gtext4");
         var text9group = d3.selectAll("#gtext5");
         var text10group = d3.selectAll("#gtext6");
+        var text11group = d3.selectAll("#gtext7");
 
         $(document).ready(function () {
             /*Animations*/
@@ -522,6 +545,9 @@
                 grandchild6.transition()
                 .attr("r", 25);
                 text7group.transition().style("opacity", 1).delay(50);
+                grandchild10.transition()
+                .attr("r", 25);
+                text11group.transition().style("opacity", 1).delay(50);
             });
 
             $("#child4").mouseleave(function () {
@@ -537,6 +563,10 @@
                     .delay(400)
                 .attr("r", 0);
                 text7group.transition().style("opacity", 0).delay(350);
+                grandchild10.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text11group.transition().style("opacity", 0).delay(350);
             });
             
             $("#gchild4").mouseover(function () {
@@ -549,6 +579,9 @@
                 text5group.transition().style("opacity", 1).delay(50);
                 text6group.transition().style("opacity", 1).delay(50);
                 text7group.transition().style("opacity", 1).delay(50);
+                grandchild10.transition()
+                .attr("r", 25);
+                text11group.transition().style("opacity", 1).delay(50);
             });
 
             $("#gchild4").mouseleave(function () {
@@ -564,6 +597,10 @@
                 text5group.transition().style("opacity", 0).delay(350);
                 text6group.transition().style("opacity", 0).delay(350);
                 text7group.transition().style("opacity", 0).delay(350);
+                grandchild10.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text11group.transition().style("opacity", 0).delay(350);
             });
             
             $("#gchild5").mouseover(function () {
@@ -576,6 +613,9 @@
                 text5group.transition().style("opacity", 1).delay(50);
                 text6group.transition().style("opacity", 1).delay(50);
                 text7group.transition().style("opacity", 1).delay(50);
+                grandchild10.transition()
+                .attr("r", 25);
+                text11group.transition().style("opacity", 1).delay(50);
             });
 
             $("#gchild5").mouseleave(function () {
@@ -591,6 +631,10 @@
                 text5group.transition().style("opacity", 0).delay(350);
                 text6group.transition().style("opacity", 0).delay(350);
                 text7group.transition().style("opacity", 0).delay(350);
+                grandchild10.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text11group.transition().style("opacity", 0).delay(350);
             });
 
             $("#gchild6").mouseover(function () {
@@ -603,6 +647,9 @@
                 text5group.transition().style("opacity", 1).delay(50);
                 text6group.transition().style("opacity", 1).delay(50);
                 text7group.transition().style("opacity", 1).delay(50);
+                grandchild10.transition()
+                .attr("r", 25);
+                text11group.transition().style("opacity", 1).delay(50);
             });
 
             $("#gchild6").mouseleave(function () {
@@ -618,8 +665,45 @@
                 text5group.transition().style("opacity", 0).delay(350);
                 text6group.transition().style("opacity", 0).delay(350);
                 text7group.transition().style("opacity", 0).delay(350);
+                grandchild10.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text11group.transition().style("opacity", 0).delay(350);
             });
 
+            $("#gchild10").mouseover(function () {
+                grandchild4.transition()
+                .attr("r", 25);
+                grandchild5.transition()
+                .attr("r", 25);
+                grandchild6.transition()
+                .attr("r", 25);
+                text5group.transition().style("opacity", 1).delay(50);
+                text6group.transition().style("opacity", 1).delay(50);
+                text7group.transition().style("opacity", 1).delay(50);
+                grandchild10.transition()
+                .attr("r", 25);
+                text11group.transition().style("opacity", 1).delay(50);
+            });
+
+            $("#gchild10").mouseleave(function () {
+                grandchild4.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild5.transition()
+                    .delay(400)
+                .attr("r", 0);
+                grandchild6.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text5group.transition().style("opacity", 0).delay(350);
+                text6group.transition().style("opacity", 0).delay(350);
+                text7group.transition().style("opacity", 0).delay(350);
+                grandchild10.transition()
+                    .delay(400)
+                .attr("r", 0);
+                text11group.transition().style("opacity", 0).delay(350);
+            });
 
 
 
